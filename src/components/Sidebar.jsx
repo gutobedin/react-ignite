@@ -12,7 +12,7 @@ export function Sidebar() {
               />
 
             <div className={styles.profile}>
-                <Avat src="https://github.com/gutobedin.png"/>
+                <Avatar src="https://github.com/gutobedin.png"/>
 
                 <strong>Gustavo Bedin</strong>
                 <span>Web Developer</span>

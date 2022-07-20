@@ -24,26 +24,29 @@ const posts = [
        {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
        {type: 'link', content: 'jane.design/doctorcare'},
     ],
-    publishedAt: new Date('2022-05-03 20:00:00'),
+    publishedAt: new Date('2022-07-10 20:00:00'),
 
   },
 
   {
     id: 2,
     author: {
-      avatarUrl : 'https://github.com/gutobedin.png',
+      avatarUrl : 'https://github.com/LeonardoLocatelli.png',
       name: 'Leozin',
-      role: ''
+      role: 'Dev Oracle'
     },
     content: [
        {type: 'paragraph', content: 'Fala galeraa 👋'},
        {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
        {type: 'link', content: 'jane.design/doctorcare'},
     ],
-    publishedAt: new Date('2022-05-03 20:00:00'),
+    publishedAt: new Date('2022-07-12 20:00:00'),
 
   },
 ];
+
+
+// Iteraçáo
 
 export function App() {
   return (
@@ -53,15 +56,17 @@ export function App() {
         <div className={styles.wrapper}>
           <Sidebar />
           <main>
-          <Post
-           author="Gustavo Bedin" 
-           content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus dolore voluptates debitis magnam animi, quaerat repudiandae provident nihil numquam consectetur nemo sunt earum quasi quibusdam quisquam ducimus, alias quo. Quis!" 
-        />
-
-        <Post 
-          author="Fernanda Zanella"
-          content="Mais um post muito legal!"
-        />
+            {posts.map(post => {
+              return (
+                <Post 
+                key={post.id}
+                  author={post.author}
+                  content={post.content}
+                  publishedAt={post.publishedAt}
+                />
+              
+              )
+            })}
           </main>
         
         </div>
